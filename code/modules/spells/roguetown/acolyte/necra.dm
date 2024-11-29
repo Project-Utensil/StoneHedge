@@ -159,6 +159,7 @@
 				if(!istype(I, /obj/item/roguecoin/silver) && !istype(I, /obj/item/flashlight/lantern/shrunken))
 					. |= SS.dropItemToGround(I)
 				if(istype(I, /obj/item/roguecoin/silver))
+					qdel(I)
 					to_chat(SS, "As you return across the veil to the underworld, the silver coin in your hand is transformed.")
 					var/obj/item/underworld/coin/C = new
 					SS.put_in_hand(C)
@@ -206,6 +207,7 @@
 					if(!istype(I, /obj/item/roguecoin/silver) && !istype(I, /obj/item/flashlight/lantern/shrunken))
 						. |= capturedsoul.dropItemToGround(I)
 					if(istype(I, /obj/item/roguecoin/silver))
+						qdel(I)
 						to_chat(capturedsoul, "As you return across the veil to the underworld, the silver coin in your hand is transformed.")
 						var/obj/item/underworld/coin/C = new
 						capturedsoul.put_in_hand(C)
